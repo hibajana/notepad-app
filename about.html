@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À propos - Hyper Notepad</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>body { font-family: 'Inter', sans-serif; }</style>
+</head>
+<body class="bg-neutral-900 text-neutral-100 min-h-screen flex flex-col">
+    <nav class="flex items-center justify-between px-6 py-3 border-b border-neutral-800 bg-neutral-950">
+        <div class="flex items-center gap-3">
+            <img src="logo.png" alt="Logo" class="h-6 w-6">
+            <span class="font-semibold text-lg tracking-tight">Hyper Notepad</span>
+            <a href="remarques.html" class="ml-6 text-neutral-400 hover:text-neutral-200 transition">Remarques</a>
+            <a href="about.html" class="ml-4 text-purple-600 font-semibold hover:text-purple-400 transition">À propos</a>
+        </div>
+        <div class="flex items-center gap-2">
+            <a href="index.html" class="bg-white text-purple-700 px-4 py-1 rounded hover:bg-purple-100 text-sm font-semibold">Nouvelle note</a>
+        </div>
+    </nav>
+    <main class="flex-1 flex flex-col items-center justify-center px-2 py-8">
+        <div class="w-full max-w-2xl bg-neutral-800 rounded-lg shadow-lg p-8 mt-8 flex flex-col items-center">
+            <div class="relative flex items-center justify-center mb-8">
+                <div class="absolute rounded-full w-40 h-40 bg-gradient-to-tr from-blue-500 via-pink-500 to-yellow-400 blur-2xl opacity-40"></div>
+                <img src="logo.png" alt="Logo Hyper Notepad" class="relative z-10 w-24 h-24 rounded-full border-4 border-neutral-800 shadow-xl">
+            </div>
+            <h1 class="text-3xl font-bold mb-4 text-center">À propos</h1>
+            <p class="text-neutral-300 text-center mb-4">
+                Hyper Notepad est une application moderne de prise de notes, conçue pour être rapide, élégante et facile à utiliser. Elle vous permet de créer, organiser et retrouver vos notes en toute simplicité.<br><br>
+                Notre mission est de rendre la prise de notes accessible à tous, sans distraction ni complication. Que vous soyez étudiant, professionnel ou créatif, Hyper Notepad vous accompagne pour capturer vos idées à tout moment.<br><br>
+                Toutes vos notes sont stockées localement pour garantir votre confidentialité et votre autonomie. Profitez d'une interface épurée, d'une expérience fluide et d'une liberté totale : pas d'inscription, pas de téléchargement, pas de publicité.<br><br>
+                Hyper Notepad évolue constamment grâce à vos retours et à notre passion pour l'innovation. Merci de faire partie de cette aventure !
+            </p>
+        </div>
+    </main>
+    <footer class="w-full text-neutral-500 text-xs flex items-center justify-center px-6 py-3 border-t border-neutral-800 bg-neutral-950">
+        <span>© 2025 Hyper Notepad</span>
+    </footer>
+</body>
+</html> 

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyper Notepad</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+      body { font-family: 'Inter', sans-serif; }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-neutral-900 text-neutral-100 min-h-screen flex flex-col">
+    <!-- Navbar -->
+    <nav class="flex items-center justify-between px-6 py-3 border-b border-neutral-800 bg-neutral-950">
+        <div class="flex items-center gap-3">
+            <img src="logo.png" alt="Logo" class="h-6 w-6">
+            <span class="font-semibold text-lg tracking-tight">Hyper Notepad</span>
+            <a href="remarques.html" class="ml-6 text-neutral-400 hover:text-neutral-200 transition">Remarques</a>
+            <a href="about.html" class="ml-4 text-neutral-400 hover:text-neutral-200 transition">À propos</a>
+        </div>
+        <div class="flex items-center gap-2">
+            <a href="index.html"><button class="bg-white text-purple-700 px-4 py-1 rounded hover:bg-purple-100 text-sm font-semibold">Nouvelle note</button></a>
+        </div>
+    </nav>
+    <!-- Main Content -->
+    <main class="flex-1 flex flex-col items-center justify-center px-2 py-8">
+        <div class="w-full max-w-2xl">
+            <h1 class="text-2xl font-bold mb-6 text-center">Note Taking App</h1>
+            <!-- Note Input Form -->
+            <form id="noteForm" class="bg-neutral-800 rounded-lg p-6 mb-6 shadow-lg flex flex-col gap-4">
+                <input type="text" id="noteTitle" placeholder="Titre de la note" required class="bg-neutral-900 text-neutral-100 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-600">
+                <textarea id="noteContent" placeholder="Contenu de la note" required rows="4" class="bg-neutral-900 text-neutral-100 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-600"></textarea>
+                <button type="submit" class="self-end bg-purple-700 text-white px-6 py-2 rounded hover:bg-purple-800 font-semibold">Enregistrer la note</button>
+            </form>
+            <!-- Filters Section -->
+            <div class="flex flex-col md:flex-row gap-4 mb-6">
+                <input type="text" id="searchInput" placeholder="Rechercher des notes..." class="flex-1  rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-600 border border-purple-300 placeholder-purple-300">
+                <select id="dateFilter" class="bg-white text-purple-700 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-600 border border-purple-300">
+                    <option value="all" class="text-purple-700">Toutes les notes</option>
+                    <option value="today" class="text-purple-700">Aujourd'hui</option>
+                    <option value="week" class="text-purple-700">Cette semaine</option>
+                    <option value="month" class="text-purple-700">Ce mois-ci</option>
+                </select>
+            </div>
+            <!-- Notes Container -->
+            <div id="notesContainer" class="grid gap-4">
+                <!-- Notes will be dynamically added here as cards -->
+            </div>
+        </div>
+    </main>
+    <footer class="w-full text-neutral-500 text-xs flex items-center justify-center px-6 py-3 border-t border-neutral-800 bg-neutral-950">
+        <span>© 2025 Hyper Notepad</span>
+    </footer>
+    <!-- Modal for viewing note details -->
+    <div id="noteModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60 hidden">
+        <div class="bg-neutral-900 rounded-lg shadow-lg p-8 max-w-lg w-full relative">
+            <button id="closeModalBtn" class="absolute top-2 right-2 text-neutral-400 hover:text-neutral-200 text-2xl">&times;</button>
+            <h2 id="modalNoteTitle" class="text-2xl font-bold mb-2"></h2>
+            <div id="modalNoteContent" class="text-neutral-200 whitespace-pre-line mb-4"></div>
+            <div class="text-xs text-neutral-400 mb-1" id="modalNoteCreated"></div>
+            <div class="text-xs text-neutral-400" id="modalNoteModified"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
